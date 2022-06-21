@@ -1,0 +1,113 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <div class="slideshow-container">
+      <input id="radio1" name="radio-btn" type="radio" /><input id="radio2" name="radio-btn" type="radio" /><input id="radio3" name="radio-btn" type="radio" /><input id="radio4" name="radio-btn" type="radio" />
+      <div class="mySlides fade first">
+        <img src="https://connect.alfred.edu/www/images/Nadine.jpg" style="width: 525px; height: 425px;" />
+        <h2>
+          Nadine Shardlow
+        </h2>
+
+        <p>
+          Director of HEOP | Opportunity Programs
+        </p>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="https://connect.alfred.edu/www/images/Michele.jpg" style="width: 525px; height: 425px;" />
+        <h2>
+          Michele Doorley
+        </h2>
+
+        <p>
+          Assistant Director of HEOP | Opportunity Programs
+        </p>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="https://connect.alfred.edu/www/images/Wendy.jpg" style="width: 525px; height: 425px;" />
+        <h2>
+          Wendy Marvin
+        </h2>
+
+        <p>
+          First Year Counselor for HEOP | Opportunity Programs
+        </p>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="https://connect.alfred.edu/www/images/Shannon.jpg" style="width: 525px; height: 425px;" />
+        <h2>
+          Shannon Brown
+        </h2>
+
+        <p>
+          HEOP Counselor | Opportunity Programs
+        </p>
+      </div>
+    </div>
+
+    <div class="navigation-auto">
+      <div class="auto-btn1">
+      </div>
+
+      <div class="auto-btn2">
+      </div>
+
+      <div class="auto-btn3">
+      </div>
+
+      <div class="auto-btn4">
+      </div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">❮</a><a class="next" onclick="plusSlides(1)">❯</a>
+
+    <div style="text-align:center">
+      <div class="nagivation-manual">
+        <label class="dot" for="radio1" onclick="currentSlide(1)"></label><label class="dot" for="radio2" onclick="currentSlide(2)"></label><label class="dot" for="radio3" onclick="currentSlide(3)"></label><label class="dot" for="radio4" onclick="currentSlide(4)"></label>
+      </div>
+    </div>
+    <script type="text/javascript">
+
+    var counter = 1;
+    setInterval(function(){
+      document.getElementById('radio' + counter).checked = true;
+      counter++;
+      if(counter > 4){
+        counter = 1;
+      }
+    }, 5000);</script>
+    <script>
+    
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+  </body>
+</html>
